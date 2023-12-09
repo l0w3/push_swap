@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_rotate.c                                       :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alrodri2 <alrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 16:18:03 by alrodri2          #+#    #+#             */
-/*   Updated: 2023/12/09 12:47:20 by alrodri2         ###   ########.fr       */
+/*   Created: 2023/10/31 17:14:21 by alrodri2          #+#    #+#             */
+/*   Updated: 2023/12/09 12:47:31 by alrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,30 @@ static int	check_tango(t_stack *src, int stk)
 {
 	swap(src, 0);
 	if (stk == STKA)
-		ft_printf("rra\n");
+		ft_printf("ra\n");
 	else if (stk == STKB)
-		ft_printf("rrb\n");
+		ft_printf("rb\n");
 	return (SUCCESS);
 }
 
-int	rev_rotate(t_stack *src, int stk)
+int	get_bot(t_stack *src, t_node **bot, int limit)
 {
-	t_node	*top;
+	int	i;
+
+	i = 0;
+	*bot = src->first;
+	while (i < (src->size + limit))
+	{
+		*bot = (*bot)->next;
+		i++;
+	}
+	return (SUCCESS);
+}
+
+int	rotate(t_stack *src, int stk)
+{
 	t_node	*bot;
+	t_node	*top;
 	t_node	*next;
 
 	if (!src || src->size < 2)
@@ -36,24 +50,24 @@ int	rev_rotate(t_stack *src, int stk)
 		return (SUCCESS);
 	}
 	get_bot(src, &bot, -1);
+	next = src->first->next;
 	top = src->first;
+	top->next = NULL;
 	bot->next = top;
-	get_bot(src, &next, -2);
-	next->next = NULL;
-	src->first = bot;
+	src->first = next;
 	if (stk == STKA)
-		ft_printf("rra\n");
+		ft_printf("ra\n");
 	else if (stk == STKB)
-		ft_printf("rrb\n");
+		ft_printf("rb\n");
 	return (SUCCESS);
 }
 
-int	rev_rot_rot(t_stack *stka, t_stack *stkb)
+int	rotate_rotate(t_stack *stka, t_stack *stkb)
 {
 	if (!stka || stka->size < 2 || !stkb || stkb->size < 2)
 		return (ERROR);
-	rev_rotate(stka, 0);
-	rev_rotate(stkb, 0);
-	ft_printf("rrr\n");
+	rotate(stka, 0);
+	rotate(stkb, 0);
+	ft_printf("rr\n");
 	return (SUCCESS);
 }

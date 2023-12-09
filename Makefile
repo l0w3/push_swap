@@ -6,7 +6,7 @@
 #    By: alrodri2 <alrodri2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/13 14:47:35 by groman-l          #+#    #+#              #
-#    Updated: 2023/10/12 16:45:09 by alrodri2         ###   ########.fr        #
+#    Updated: 2023/10/31 17:40:19 by alrodri2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,15 +18,12 @@ LIBC = ar -rcs
 FLAGS = -Wall -Wextra -Werror -g
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SORUCES~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-SRC = parse.c push_swap.c init.c push.c rev_rotate.c swap.c utils.c 
+SRC = parse.c push_swap.c init.c push.c rev_rotate.c swap.c utils.c  sorting.c rotate.c small_sort.c
 LIBFT = ./libft/
-FTPRINTF = ./ft_printf/
 L_SRC = ./src
 L_LIB = ./libft/libft.a
-L_FTPRINTF = ./ft_printf/libftprintf.a
 INC =   -I ./inc/\
         -I ./libft/\
-		-I ./ft_printf/\
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~DIRECTORIES~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 D_OBJ = $(L_SRC)/obj
@@ -46,6 +43,8 @@ $(D_OBJ)/%.o: $(L_SRC)/%.c
 	$(CC) -MMD $(FLAGS) -c $< -o $@ $(INC)
 
 $(NAME): $(OBJ)
+	@echo hello
+	@echo OBJ: $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) $(L_LIB) -o $(NAME) $(INC)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~futura no barra de carga~~~~~~~~~~~~~~~~~~~#

@@ -1,0 +1,9 @@
+*.d
+*.o
+._.*
+.DSTORE
+README.*
+*.pdf
+push_swap
+obj
+

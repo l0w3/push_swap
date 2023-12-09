@@ -6,7 +6,7 @@
 /*   By: alrodri2 <alrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 17:08:00 by alrodri2          #+#    #+#             */
-/*   Updated: 2023/10/12 16:49:39 by alrodri2         ###   ########.fr       */
+/*   Updated: 2023/12/09 12:52:23 by alrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-# include "../ft_printf/ft_printf.h"
 # include <stdio.h>
 
 # define TRUE 1
@@ -23,6 +22,7 @@
 # define FALSE		0
 # define STKA		1
 # define STKB		2
+
 typedef struct s_node
 {
 	int				cont;
@@ -38,7 +38,7 @@ typedef struct s_stack
 	t_node	*last;
 }	t_stack;
 
-int parse(int argc, char **argv);
+int		parse(int argc, char **argv);
 
 /*******init.c*********/
 int		double_init(t_stack **stk1, t_stack **stk2);
@@ -66,5 +66,6 @@ void	sort_big(t_stack *stka, t_stack *stkb);
 /*******push_swap******/
 void	indexer(t_stack *stk);
 int		find_pos(t_stack *src, int trgt);
+int		sort_small(t_stack *stka, t_stack *stkb);
 
 #endif

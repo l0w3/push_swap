@@ -6,12 +6,11 @@
 /*   By: alrodri2 <alrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 16:15:48 by alrodri2          #+#    #+#             */
-/*   Updated: 2023/10/12 16:35:25 by alrodri2         ###   ########.fr       */
+/*   Updated: 2023/12/09 12:49:22 by alrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
 
 int	swap(t_stack *src, int stk)
 {

@@ -6,15 +6,15 @@
 /*   By: alrodri2 <alrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:45:29 by alrodri2          #+#    #+#             */
-/*   Updated: 2023/10/09 17:09:52 by alrodri2         ###   ########.fr       */
+/*   Updated: 2023/12/09 12:42:25 by alrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_stack *a;
+	t_stack	*a;
 
-    parsero(argc, argv, &a);
+	parsero(argc, argv, &a);
 }

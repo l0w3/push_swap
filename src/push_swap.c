@@ -6,12 +6,11 @@
 /*   By: alrodri2 <alrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 16:18:36 by alrodri2          #+#    #+#             */
-/*   Updated: 2023/10/12 16:36:28 by alrodri2         ###   ########.fr       */
+/*   Updated: 2023/12/09 12:46:59 by alrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
 
 int	stack_set(int ac, char **av, t_stack *stk)
 {
@@ -78,12 +77,10 @@ int	main(int ac, char **av)
 	}
 	else
 	{
-		/*
 		if (a->size < 6)
 			sort_small(a, b);
 		else
-		*/
-		sort_big(a, b);
+			sort_big(a, b);
 	}
 	willy_willy(a, b);
 	return (SUCCESS);

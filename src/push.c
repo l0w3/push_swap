@@ -6,12 +6,11 @@
 /*   By: alrodri2 <alrodri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:28:29 by alrodri2          #+#    #+#             */
-/*   Updated: 2023/10/12 16:35:11 by alrodri2         ###   ########.fr       */
+/*   Updated: 2023/12/09 12:46:35 by alrodri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
 
 int	push_stack(t_stack **stk, int cont, int index)
 {
@@ -54,4 +53,4 @@ int	push(t_stack **src, t_stack **dst, int stk)
 	else if (stk == 2)
 		ft_printf("pb\n");
 	return (SUCCESS);
-}   
+}
